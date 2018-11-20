@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable name="serverResponse" type="com.example.ashut.mylivedata.model.MyResponse"/>
+        <variable name="itemClickListener"
+            type="com.example.ashut.mylivedata.adapters.ListView1Adapter.RadioGroupEventListener"/>
+    </data>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <TextView
+        android:text="@{serverResponse.duration}"
+        android:layout_weight="1"
+        android:id="@+id/item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+    <RadioButton
+        android:onCheckedChanged="@{(cb,onchecked)->itemClickListener.onItemClickListener(cb,onchecked)}"
+        android:id="@+id/radio"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>
+</layout>
